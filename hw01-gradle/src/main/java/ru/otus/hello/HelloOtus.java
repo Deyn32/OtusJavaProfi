@@ -1,4 +1,4 @@
-package ru.hello.otus;
+package ru.otus.hello;
 
 import com.google.common.collect.Lists;
 
