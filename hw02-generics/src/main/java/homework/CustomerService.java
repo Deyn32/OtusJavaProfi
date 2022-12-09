@@ -1,5 +1,6 @@
 package homework;
 
+import com.google.common.collect.UnmodifiableIterator;
 
 import java.util.Comparator;
 import java.util.Map;
@@ -8,10 +9,7 @@ import java.util.TreeMap;
 
 public class CustomerService {
 
-    SortedMap<Customer, String> map = new TreeMap<>(Comparator.comparingLong(Customer::getScores));
-
-    //todo: 3. надо реализовать методы этого класса
-    //важно подобрать подходящую Map-у, посмотрите на редко используемые методы, они тут полезны
+    private SortedMap<Customer, String> map = new TreeMap<>(Comparator.comparingLong(Customer::getScores));
 
     public Map.Entry<Customer, String> getSmallest() {
         return map.entrySet().iterator().next();

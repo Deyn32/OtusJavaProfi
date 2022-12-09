@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Customer {
     private final long id;
-    private final String name;
+    private String name;
     private final long scores;
 
     public Customer(long id, String name, long scores) {
@@ -22,7 +22,7 @@ public class Customer {
     }
 
     public void setName(String name) {
-
+        this.name = name;
     }
 
     public long getScores() {
