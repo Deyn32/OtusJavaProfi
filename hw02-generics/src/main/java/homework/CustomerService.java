@@ -17,12 +17,7 @@ public class CustomerService {
         var result =  map.entrySet().stream()
             .filter(val -> val.getKey().getScores() > customer.getScores())
             .findFirst();
-        if (result.isPresent()) {
-            return result.get();
-        }
-        else {
-            return null;
-        }
+        return result.orElse(null);
     }
 
     public void add(Customer customer, String data) {
