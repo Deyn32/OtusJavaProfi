@@ -1,18 +1,28 @@
 package ru.otus.hello;
 
-import com.google.common.collect.Lists;
-
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 public class HelloOtus {
     public static void main(String[] args) {
-        Set<String> prime = new HashSet<>();
-        prime.add("One");
-        prime.add("Two");
-        prime.add("Three");
-        List<String> second = Lists.newArrayList(prime);
-        System.out.println(Lists.reverse(second));
+        int[] arr = {9, 4, 9, 6, 7, 4, 5};
+        System.out.println(findFirstUniqueInt(arr));
+    }
+
+    // Найти первый не повторяющийся элемент в массиве целых чисел
+    public static int findFirstUniqueInt(int[] arr) {
+        int result = 0;
+        for(int i= 0; i < arr.length; i++) {
+            boolean flag = false;
+            for(int j = 0; j < arr.length; j++) {
+                if(i != j && arr[i] == arr[j]) {
+                    flag = true;
+                    break;
+                }
+            }
+            if(!flag) {
+                result = arr[i];
+                break;
+            }
+        }
+
+        return result;
     }
 }
